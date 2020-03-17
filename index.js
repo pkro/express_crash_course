@@ -7,10 +7,13 @@ const app = express();
 //init middleware
 app.use(logger);
 
+// Body parser middleware
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+
 // members API
 app.use('/api/members/', require('./routes/api/members'));
 
-//app.use('/api/members', router)
 // set static folder - already enough to serve all files from this folder
 app.use(express.static(path.join(__dirname, "public")));
 
