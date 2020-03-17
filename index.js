@@ -15,9 +15,14 @@ app.get("/api/members", (req, res) => {
 // get single member
 app.get("/api/members/:id", (req, res) => {
   const id = req.params.id;
-  console.log(id);
-  res.json(members.find(entry => entry.id === parseInt(id)));
+  const member = members.find(entry => entry.id === parseInt(id))
+  if(member) {
+    res.json(member);
+  } else {
+    res.status(400).json({msg: `member ${id} not found`});
+  }
 });
+
 // set static folder - already enough to serve all files from this folder
 app.use(express.static(path.join(__dirname, "public")));
 
