@@ -1,4 +1,17 @@
 <h1 class="mb-3">{{title}}</h1>
+
+<form action="/api/members" method="POST" class="mb-4">
+  <div class="form-group">
+    <label for="Name">Name</label>
+    <input type="text" name="name" id="name">
+  </div>
+  <div class="form-group">
+    <label for="Email">Email</label>
+    <input type="email" name="email" id="email">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
 <table class="table">
   <thead>
     <tr>
@@ -22,3 +35,5 @@
 
   </tbody>
 </table>
+
+<a href="/api/members" class="btn btn-light mt-4">API</a>
