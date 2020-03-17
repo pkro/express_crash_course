@@ -1,0 +1,24 @@
+<h1 class="mb-3">{{title}}</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Active</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each members}}
+      <tr>
+      <td scope="row">{{this.id}}</td>
+      <td>{{this.name}}</td>
+      <td>{{this.email}}</td>
+      <td><input type="checkbox" name="active{{this.id}}" id="active{{this.id}}" checked={{this.active}}></td>
+    </tr>
+
+
+    {{/each}}
+
+  </tbody>
+</table>
